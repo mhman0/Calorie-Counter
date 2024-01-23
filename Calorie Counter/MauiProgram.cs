@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 
+// following https://www.youtube.com/playlist?list=PLdo4fOcmZ0oUBAdL2NwBpDs32zwGqb9DY to start this app
+
 namespace Calorie_Counter
 {
     public static class MauiProgram

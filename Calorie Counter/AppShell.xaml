@@ -7,6 +7,12 @@
     Shell.FlyoutBehavior="Disabled"
     Title="Calorie_Counter">
 
+    <!--
+    App shell is an opinionated shell of the applicaion
+        below is an example of a content template, which are "lazily" uploaded wehn app loads up
+    easily add flyout navigation, tabs, tab item, menu items, etc. 
+    -->
+    
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
