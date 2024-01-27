@@ -1,9 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Calorie_Counter.MainPage">
+<ContentPage
+    x:Class="Calorie_Counter.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Grid>
-        
+    <Grid
+        Padding="10"
+        ColumnDefinitions=".75*,.25*"
+        RowDefinitions="100, Auto, *"> 
+        <!--  Auto, Auto would have the columns size themselves  -->
+        <Image
+            Grid.ColumnSpan="2"
+            BackgroundColor="Red"
+            Source="dotne_bot.png" />
+        <!--  so it goes across both columns  -->
+
     </Grid>
 </ContentPage>
