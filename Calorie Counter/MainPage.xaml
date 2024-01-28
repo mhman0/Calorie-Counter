@@ -7,13 +7,60 @@
     <Grid
         Padding="10"
         ColumnDefinitions=".75*,.25*"
-        RowDefinitions="100, Auto, *"> 
+        ColumnSpacing="10"
+        RowDefinitions="100, Auto, *"
+        RowSpacing="10">
         <!--  Auto, Auto would have the columns size themselves  -->
         <Image
             Grid.ColumnSpan="2"
-            BackgroundColor="Red"
-            Source="dotne_bot.png" />
+            BackgroundColor="E13333"
+            Source="dotnet_bot.png" />
         <!--  so it goes across both columns  -->
+
+        <Entry
+            Grid.Row="1"
+            FontSize="21"
+            Placeholder="Enter task" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="Add" />
+
+        <CollectionView Grid.Row="2" Grid.ColumnSpan="2">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Apples</x:String>
+                    <x:String>Apples</x:String>
+                    <x:String>Apples</x:String>
+                    <x:String>Apples</x:String>
+                    <x:String>Apples</x:String>
+                    <x:String>Apples</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <!--  Using some data binding to get strings into item template  -->
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <!--  added the grid that contains the datatemplate text bound to it to a swipe view which makes it so you can just swip tasks away  -->
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem BackgroundColor="Black" Text="Delete" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <!--  Still need to add some swipe items  -->
+                        <Grid Padding="0,5">
+                            <Frame>
+                                <Label FontSize="20" Text="{Binding .}" />
+                                <!--  Using binding to . means "binding to myself"  -->
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
 
     </Grid>
 </ContentPage>
