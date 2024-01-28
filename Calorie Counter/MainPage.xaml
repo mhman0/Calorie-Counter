@@ -13,8 +13,8 @@
         <!--  Auto, Auto would have the columns size themselves  -->
         <Image
             Grid.ColumnSpan="2"
-            BackgroundColor="E13333"
-            Source="dotnet_bot.png" />
+            BackgroundColor="Transparent"
+            Source="to_doicon.png" />
         <!--  so it goes across both columns  -->
 
         <Entry
