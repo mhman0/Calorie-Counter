@@ -68,6 +68,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Properties\NewFolder1\" />
+	  <Folder Include="Properties\NewFolder2\" />
 	  <Folder Include="Properties\NewFolder\" />
 	</ItemGroup>
 
