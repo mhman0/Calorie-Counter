@@ -1,4 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace Calorie_Counter.Properties.ViewModel;
@@ -32,8 +34,39 @@ namespace Calorie_Counter.Properties.ViewModel;
 //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 //}
 
-public partial class MainViewModel : ObservableObject // 
+// Declare a partial class named MainViewModel that extends ObservableObject.
+public partial class MainViewModel : ObservableObject
 {
+    // Constructor for the MainViewModel class.
+    public MainViewModel()
+    {
+        // Initialize the 'Items' property with a new instance of ObservableCollection<string>.
+        Items = new ObservableCollection<string>();
+    }
+
+    // Apply the ObservableProperty attribute to the 'items' field.
+    // The ObservableProperty attribute generates property-change notification code.
     [ObservableProperty]
-    string text;
+    // Declare an ObservableCollection<string> field named 'items'.
+    ObservableCollection<string> items;
+
+
+    // Apply the ObservableProperty attribute to the 'text' field.
+    // The ObservableProperty attribute generates property-change notification code.
+    [ObservableProperty]
+    // Declare a nullable string field named 'text'.
+    string? text;
+
+    [RelayCommand]
+    void Add()
+    {
+        if(string.IsNullOrWhiteSpace(Text))
+#pragma warning disable CS8604 // Possible null reference argument.
+            Items.Add(Text);
+#pragma warning restore CS8604 // Possible null reference argument.
+                              //add our item and set text property to empty string
+        Text = string.Empty;
+
+        
+    }
 }

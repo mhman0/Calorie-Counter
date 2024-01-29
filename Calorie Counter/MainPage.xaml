@@ -2,7 +2,9 @@
 <ContentPage
     x:Class="Calorie_Counter.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:Calorie_Counter.Properties.ViewModel"
+    x:DataType="viewmodel:MainViewModel">
 
     <Grid
         Padding="10"
@@ -20,14 +22,21 @@
         <Entry
             Grid.Row="1"
             FontSize="21"
-            Placeholder="Enter task" />
+            Placeholder="Enter task"
+            Text="{Binding Text}" />
 
         <Button
             Grid.Row="1"
             Grid.Column="1"
+            Command="{Binding AddCommand}"
             Text="Add" />
 
-        <CollectionView Grid.Row="2" Grid.ColumnSpan="2">
+        <CollectionView
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding Items}">
+            <!--
+            Original item source material to check
             <CollectionView.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Apples</x:String>
@@ -37,10 +46,10 @@
                     <x:String>Apples</x:String>
                     <x:String>Apples</x:String>
                 </x:Array>
-            </CollectionView.ItemsSource>
+            </CollectionView.ItemsSource>-->
             <!--  Using some data binding to get strings into item template  -->
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="{x:Type x:String}">
                     <!--  added the grid that contains the datatemplate text bound to it to a swipe view which makes it so you can just swip tasks away  -->
                     <SwipeView>
                         <SwipeView.RightItems>
