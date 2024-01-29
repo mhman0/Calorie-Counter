@@ -63,10 +63,18 @@ public partial class MainViewModel : ObservableObject
         if (string.IsNullOrWhiteSpace(Text))
             return;
 
-        Items.Add(Text);
+            Items.Add(Text);
 //add our item and set text property to empty string
-        Text = string.Empty;
+            Text = string.Empty;
+            
+    }
 
-        
+    [RelayCommand]
+    void Delete(string s)
+    {
+        if (Items.Contains(s))
+        {
+            Items.Remove(s);
+        }
     }
 }

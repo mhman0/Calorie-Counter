@@ -4,7 +4,7 @@
 
     <!--  Note: For Android please see also Platforms\Android\Resources\values\colors.xml  -->
 
-    <Color x:Key="Primary">#E13333</Color>
+    <Color x:Key="Primary">#9E0000</Color>
     <Color x:Key="PrimaryDark">#008080</Color>
     <Color x:Key="PrimaryDarkText">#242424</Color>
     <Color x:Key="Secondary">#008080</Color>
@@ -14,7 +14,7 @@
     <Color x:Key="White">White</Color>
     <Color x:Key="Black">Black</Color>
     <Color x:Key="Magenta">#008080</Color>
-    <Color x:Key="MidnightBlue">#E13333</Color>
+    <Color x:Key="MidnightBlue">#9E0000</Color>
     <Color x:Key="OffBlack">#1f1f1f</Color>
 
     <Color x:Key="Gray100">#E1E1E1</Color>
