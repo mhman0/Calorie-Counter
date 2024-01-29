@@ -60,7 +60,10 @@
                         <!--  Still need to add some swipe items  -->
                         <Grid Padding="0,5">
                             <Frame>
-                                <Label FontSize="20" Text="{Binding .}" />
+                                <Label
+                                    FontSize="24"
+                                    Text="{Binding .}"
+                                    TextColor="DarkRed" />
                                 <!--  Using binding to . means "binding to myself"  -->
                             </Frame>
                         </Grid>
