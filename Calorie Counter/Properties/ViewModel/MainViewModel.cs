@@ -55,16 +55,16 @@ public partial class MainViewModel : ObservableObject
     // The ObservableProperty attribute generates property-change notification code.
     [ObservableProperty]
     // Declare a nullable string field named 'text'.
-    string? text;
+    string text;
 
     [RelayCommand]
     void Add()
     {
-        if(string.IsNullOrWhiteSpace(Text))
-#pragma warning disable CS8604 // Possible null reference argument.
-            Items.Add(Text);
-#pragma warning restore CS8604 // Possible null reference argument.
-                              //add our item and set text property to empty string
+        if (string.IsNullOrWhiteSpace(Text))
+            return;
+
+        Items.Add(Text);
+//add our item and set text property to empty string
         Text = string.Empty;
 
         

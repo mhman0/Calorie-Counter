@@ -21,7 +21,6 @@
 
         <Entry
             Grid.Row="1"
-            FontSize="21"
             Placeholder="Enter task"
             Text="{Binding Text}" />
 
@@ -61,9 +60,9 @@
                         <Grid Padding="0,5">
                             <Frame>
                                 <Label
+                                    BackgroundColor="Transparent"
                                     FontSize="24"
-                                    Text="{Binding .}"
-                                    TextColor="DarkRed" />
+                                    Text="{Binding .}" />
                                 <!--  Using binding to . means "binding to myself"  -->
                             </Frame>
                         </Grid>
