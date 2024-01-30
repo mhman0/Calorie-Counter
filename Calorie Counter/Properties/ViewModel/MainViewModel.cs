@@ -41,7 +41,9 @@ public partial class MainViewModel : ObservableObject
     public MainViewModel()
     {
         // Initialize the 'Items' property with a new instance of ObservableCollection<string>.
+#pragma warning disable IDE0028 // Simplify collection initialization
         Items = new ObservableCollection<string>();
+#pragma warning restore IDE0028 // Simplify collection initialization
     }
 
     // Apply the ObservableProperty attribute to the 'items' field.

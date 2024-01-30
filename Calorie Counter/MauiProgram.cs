@@ -20,6 +20,9 @@ namespace Calorie_Counter
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainViewModel>();
 
+            builder.Services.AddTransient<DetailPage>(); // singleton is created 1 time - transient is created / destroyed every time
+            builder.Services.AddTransient<DetailViewModel>();
+
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

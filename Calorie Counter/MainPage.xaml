@@ -6,6 +6,7 @@
     xmlns:viewmodel="clr-namespace:Calorie_Counter.Properties.ViewModel"
     x:DataType="viewmodel:MainViewModel">
 
+    <!--  Grid layout for better organization  -->
     <Grid
         Padding="10"
         ColumnDefinitions=".75*,.25*"
@@ -13,46 +14,40 @@
         RowDefinitions="100, Auto, *"
         RowSpacing="10">
         <!--  Auto, Auto would have the columns size themselves  -->
+
+        <!--  Image spanning both columns  -->
         <Image
             Grid.ColumnSpan="2"
             BackgroundColor="Transparent"
             Source="to_doicon.png" />
-        <!--  so it goes across both columns  -->
 
+        <!--  Entry for user input  -->
         <Entry
             Grid.Row="1"
             Placeholder="Enter task"
             Text="{Binding Text}" />
 
+        <!--  Button triggering the AddCommand  -->
         <Button
             Grid.Row="1"
             Grid.Column="1"
             Command="{Binding AddCommand}"
             Text="Add" />
 
+        <!--  CollectionView for displaying items  -->
         <CollectionView
             Grid.Row="2"
             Grid.ColumnSpan="2"
             ItemsSource="{Binding Items}">
-            <!--
-            Original item source material to check
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Apples</x:String>
-                    <x:String>Apples</x:String>
-                    <x:String>Apples</x:String>
-                    <x:String>Apples</x:String>
-                    <x:String>Apples</x:String>
-                    <x:String>Apples</x:String>
-                </x:Array>
-            </CollectionView.ItemsSource>-->
-            <!--  Using some data binding to get strings into item template  -->
+
+            <!--  DataTemplate for items in the CollectionView  -->
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="{x:Type x:String}">
-                    <!--  added the grid that contains the datatemplate text bound to it to a swipe view which makes it so you can just swip tasks away  -->
+                    <!--  SwipeView for interactive swiping  -->
                     <SwipeView>
                         <SwipeView.RightItems>
                             <SwipeItems>
+                                <!--  SwipeItem for deletion  -->
                                 <SwipeItem
                                     BackgroundColor="Black"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
@@ -60,9 +55,15 @@
                                     Text="Delete" />
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <!--  Still need to add some swipe items  -->
+
+                        <!--  Grid for item display within SwipeView  -->
                         <Grid Padding="0,5">
+                            <!--  GestureRecognizer within a Frame for interaction  -->
                             <Frame>
+                                <Frame.GestureRecognizers>  
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}" CommandParameter="{Binding .}" />
+                                </Frame.GestureRecognizers>
+                                <!--  Label displaying item text  -->
                                 <Label
                                     BackgroundColor="Transparent"
                                     FontSize="24"
@@ -72,10 +73,7 @@
                         </Grid>
                     </SwipeView>
                 </DataTemplate>
-
             </CollectionView.ItemTemplate>
-
         </CollectionView>
-
     </Grid>
 </ContentPage>
