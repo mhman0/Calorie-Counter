@@ -68,9 +68,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="NewFolder1\" />
+	  <Folder Include="NewFolder\" />
 	  <Folder Include="Properties\NewFolder1\" />
 	  <Folder Include="Properties\NewFolder2\" />
 	  <Folder Include="Properties\NewFolder\" />
+	  <Folder Include="ViewModel\" />
 	</ItemGroup>
 
 	<ItemGroup>
