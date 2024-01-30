@@ -60,8 +60,8 @@
                         <Grid Padding="0,5">
                             <!--  GestureRecognizer within a Frame for interaction  -->
                             <Frame>
-                                <Frame.GestureRecognizers>  
-                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}" CommandParameter="{Binding .}" />
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=TapCommand}" CommandParameter="{Binding .}" />
                                 </Frame.GestureRecognizers>
                                 <!--  Label displaying item text  -->
                                 <Label

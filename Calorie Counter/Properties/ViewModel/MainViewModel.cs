@@ -79,4 +79,11 @@ public partial class MainViewModel : ObservableObject
             Items.Remove(s);
         }
     }
+
+    [RelayCommand]
+    async Task Tap(string s)
+    {
+        await Shell.Current.GoToAsync(nameof(DetailPage));//referencing the detail page info
+    }
 }
+
