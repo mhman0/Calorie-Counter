@@ -83,7 +83,8 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     async Task Tap(string s)
     {
-        await Shell.Current.GoToAsync(nameof(DetailPage));//referencing the detail page info
+        //referencing the detail page info
+        await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={s}");
     }
 }
 
