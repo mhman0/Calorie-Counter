@@ -57,6 +57,39 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="NewFolder1\**" />
+	  <AndroidResource Remove="NewFolder\**" />
+	  <AndroidResource Remove="Properties\NewFolder1\**" />
+	  <AndroidResource Remove="Properties\NewFolder2\**" />
+	  <AndroidResource Remove="Properties\NewFolder\**" />
+	  <Compile Remove="NewFolder1\**" />
+	  <Compile Remove="NewFolder\**" />
+	  <Compile Remove="Properties\NewFolder1\**" />
+	  <Compile Remove="Properties\NewFolder2\**" />
+	  <Compile Remove="Properties\NewFolder\**" />
+	  <EmbeddedResource Remove="NewFolder1\**" />
+	  <EmbeddedResource Remove="NewFolder\**" />
+	  <EmbeddedResource Remove="Properties\NewFolder1\**" />
+	  <EmbeddedResource Remove="Properties\NewFolder2\**" />
+	  <EmbeddedResource Remove="Properties\NewFolder\**" />
+	  <MauiCss Remove="NewFolder1\**" />
+	  <MauiCss Remove="NewFolder\**" />
+	  <MauiCss Remove="Properties\NewFolder1\**" />
+	  <MauiCss Remove="Properties\NewFolder2\**" />
+	  <MauiCss Remove="Properties\NewFolder\**" />
+	  <MauiXaml Remove="NewFolder1\**" />
+	  <MauiXaml Remove="NewFolder\**" />
+	  <MauiXaml Remove="Properties\NewFolder1\**" />
+	  <MauiXaml Remove="Properties\NewFolder2\**" />
+	  <MauiXaml Remove="Properties\NewFolder\**" />
+	  <None Remove="NewFolder1\**" />
+	  <None Remove="NewFolder\**" />
+	  <None Remove="Properties\NewFolder1\**" />
+	  <None Remove="Properties\NewFolder2\**" />
+	  <None Remove="Properties\NewFolder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\to_doicon.png" />
 	</ItemGroup>
 
@@ -68,11 +101,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="NewFolder1\" />
-	  <Folder Include="NewFolder\" />
-	  <Folder Include="Properties\NewFolder1\" />
-	  <Folder Include="Properties\NewFolder2\" />
-	  <Folder Include="Properties\NewFolder\" />
 	  <Folder Include="ViewModel\" />
 	</ItemGroup>
 

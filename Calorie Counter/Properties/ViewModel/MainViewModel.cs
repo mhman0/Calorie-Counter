@@ -37,12 +37,14 @@ namespace Calorie_Counter.Properties.ViewModel;
 // Declare a partial class named MainViewModel that extends ObservableObject.
 public partial class MainViewModel : ObservableObject
 {
+    IConnectivity conenctivity;
     // Constructor for the MainViewModel class.
-    public MainViewModel()
+    public MainViewModel(IConnectivity conenctivity)
     {
         // Initialize the 'Items' property with a new instance of ObservableCollection<string>.
 #pragma warning disable IDE0028 // Simplify collection initialization
         Items = new ObservableCollection<string>();
+        this.conenctivity = conenctivity;
 #pragma warning restore IDE0028 // Simplify collection initialization
     }
 
@@ -60,10 +62,16 @@ public partial class MainViewModel : ObservableObject
     string text;
 
     [RelayCommand]
-    void Add()
+    async Task Add()
     {
         if (string.IsNullOrWhiteSpace(Text))
             return;
+
+        if(conenctivity.NetworkAccess != NetworkAccess.Internet)
+        {
+            await Shell.Current.DisplayAlert("Uh Oh!", "No Internet", "OK");
+            return;
+        }
 
             Items.Add(Text);
 //add our item and set text property to empty string
